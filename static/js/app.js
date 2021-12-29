@@ -2,7 +2,7 @@
 function init() {
     let selector = d3.select('#selDataset');
 
-    d3.json("samples.json").then((data) => {
+    d3.json("../Resources/samples.json").then((data) => {
         inputNames = data.names;
         demographics = data.metadata;
         samples = data.samples;
@@ -124,7 +124,7 @@ function plotCharts(selectedID) {
             type: "indicator",
             gauge: {
                 axis: { range: [0, 9], tickcolor: "black", tickmode: "array", tickvals: [0,1,2,3,4,5,6,7,8,9], ticktext: [0,1,2,3,4,5,6,7,8,9] },
-                bar: { color: "#669999" },
+                bar: { color: "##005A92" },
                 bgcolor: "white",
                 borderwidth: 2,
                 bordercolor: "transparent",
