@@ -113,7 +113,9 @@ function plotCharts(selectedID) {
     };
     Plotly.newPlot("bubble", data, chartLayout);
 
-    // Plot Gauge chart
+
+    // Function to plot Washing frequency
+// Plot Gauge chart
     plotTitle = 'Belly Buttom Washing Frequency';
     var gaugeTrace = {
             domain: { x: [0, 1], y: [0, 1] },
@@ -121,24 +123,24 @@ function plotCharts(selectedID) {
             title: { text: "<b> Belly Buttom Washing Frequency </b> <br> Scrubs per Week " },
             type: "indicator",
             gauge: {
-                axis: { range: [0, 9], tickwidth: 0.5, tickcolor: "black" },
+                axis: { range: [0, 9], tickcolor: "black", tickmode: "array", tickvals: [0,1,2,3,4,5,6,7,8,9], ticktext: [0,1,2,3,4,5,6,7,8,9] },
                 bar: { color: "#669999" },
                 bgcolor: "white",
                 borderwidth: 2,
                 bordercolor: "transparent",
+                textposition: "inside",
                 steps: [
-                  { range: [0, 1], color: "#fff" },
-                  { range: [1, 2], color: "#e6fff5" },
-                  { range: [2, 3], color: "ccffeb" },
-                  { range: [3, 4], color: "b3ffe0" },
-                  { range: [4, 5], color: "#99ffd6" },
-                  { range: [5, 6], color: "#80ffcc" },
-                  { range: [6, 7], color: "#66ffc2" },
-                  { range: [7, 8], color: "#4dffb8" },
-                  { range: [8, 9], color: "#33ffad" }
-        
+                    { range: [0, 1], color: "#FFFFF0"},
+                    { range: [1, 2], color: "#F5F5DC"},
+                    { range: [2, 3], color: "#FFFFCC"},
+                    { range: [3, 4], color: "#E5FFCC"},
+                    { range: [4, 5], color: "#CCFFCC"},
+                    { range: [5, 6], color: "#CCFFE5"},
+                    { range: [6, 7], color: "#99FFCC"},
+                    { range: [7, 8], color: "#66FFB2"},
+                    { range: [8, 9], color: "#33FF99"}
                 ],
-              },
+            },
             mode: "gauge+number"
 
         };
@@ -150,6 +152,5 @@ function plotCharts(selectedID) {
             margin: { t: 0, b: 0 }
     };    
     Plotly.newPlot("gauge", data, chartLayout);
-  
 
 }
