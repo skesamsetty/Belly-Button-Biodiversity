@@ -2,7 +2,7 @@
 function init() {
     let selector = d3.select('#selDataset');
 
-    d3.json("./resources/samples.json").then((data) => {
+    d3.json("./Resources/samples.json").then((data) => {
         inputNames = data.names;
         demographics = data.metadata;
         samples = data.samples;
